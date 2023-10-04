@@ -43,11 +43,11 @@
 			// 쿠키값을 가져온다
 			String cValue = c.getValue() ;
 			if ("egovLatestServerTime".equals(cName)) {
-				System.out.println("===>>> egovLatestServerTime = "+cName+":"+cValue);
+//				System.out.println("===>>> egovLatestServerTime = "+cName+":"+cValue);
 				egovLatestServerTime = cValue;
 			}
 			if ("egovExpireSessionTime".equals(cName)) {
-				System.out.println("===>>> egovExpireSessionTime = "+cName+":"+cValue);
+//				System.out.println("===>>> egovExpireSessionTime = "+cName+":"+cValue);
 				egovExpireSessionTime = cValue;
 			}
 		}
