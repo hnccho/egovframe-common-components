@@ -21,6 +21,7 @@ import egovframework.com.cmm.ComDefaultCodeVO;
 import egovframework.com.cmm.EgovMessageSource;
 import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.annotation.IncludedInfo;
+import egovframework.com.cmm.service.CmmnDetailCode;
 import egovframework.com.cmm.service.EgovCmmUseService;
 import egovframework.com.cmm.util.EgovUserDetailsHelper;
 import egovframework.com.cmm.util.EgovXssChecker;
@@ -95,8 +96,8 @@ public class EgovOnlineManualController {
         searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
         searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
 
-        List<OnlineManualVO> reusltList = egovOnlineManualService.selectOnlineManualList(searchVO);
-        model.addAttribute("resultList", reusltList);
+        List<OnlineManualVO> resultList = egovOnlineManualService.selectOnlineManualList(searchVO);
+        model.addAttribute("resultList", resultList);
 
         int totCnt = egovOnlineManualService.selectOnlineManualListCnt(searchVO);
         paginationInfo.setTotalRecordCount(totCnt);
@@ -150,8 +151,8 @@ public class EgovOnlineManualController {
         searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
         searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
 
-        List<OnlineManualVO> reusltList = egovOnlineManualService.selectOnlineManualList(searchVO);
-        model.addAttribute("resultList", reusltList);
+        List<OnlineManualVO> resultList = egovOnlineManualService.selectOnlineManualList(searchVO);
+        model.addAttribute("resultList", resultList);
 
         int totCnt = egovOnlineManualService.selectOnlineManualListCnt(searchVO);
         paginationInfo.setTotalRecordCount(totCnt);
@@ -192,7 +193,7 @@ public class EgovOnlineManualController {
     	ComDefaultCodeVO vo = new ComDefaultCodeVO();
 		vo.setCodeId("COM041");
 
-		List<?> _result = cmmUseService.selectCmmCodeDetail(vo);
+		List<CmmnDetailCode> _result = cmmUseService.selectCmmCodeDetail(vo);
 		model.addAttribute("onlineMnlSeCode", _result);
 
         model.addAttribute("onlineManualVO", new OnlineManualVO());
@@ -249,7 +250,7 @@ public class EgovOnlineManualController {
     	ComDefaultCodeVO vo = new ComDefaultCodeVO();
 		vo.setCodeId("COM041");
 
-		List<?> _result = cmmUseService.selectCmmCodeDetail(vo);
+		List<CmmnDetailCode> _result = cmmUseService.selectCmmCodeDetail(vo);
 		model.addAttribute("onlineMnlSeCode", _result);
 
 		OnlineManualVO onlineManualVO = new OnlineManualVO();

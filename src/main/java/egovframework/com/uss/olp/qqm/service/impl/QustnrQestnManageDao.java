@@ -3,12 +3,13 @@ package egovframework.com.uss.olp.qqm.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import org.egovframe.rte.psl.dataaccess.util.EgovMap;
+import org.springframework.stereotype.Repository;
+
 import egovframework.com.cmm.ComDefaultVO;
 import egovframework.com.cmm.service.impl.EgovComAbstractDAO;
 import egovframework.com.uss.olp.qqm.service.QustnrQestnManageVO;
 
-import org.egovframe.rte.psl.dataaccess.util.EgovMap;
-import org.springframework.stereotype.Repository;
 /**
  * 설문문항을 처리하는 Dao Class 구현
  * @author 공통서비스 장동한
@@ -35,7 +36,7 @@ public class QustnrQestnManageDao extends EgovComAbstractDAO {
 	 * @return Map
 	 * @throws Exception
 	 */
-	public List<?> selectQustnrManageStatistics2(Map<?, ?> map) throws Exception{
+	public List<EgovMap> selectQustnrManageStatistics2(Map<?, ?> map) throws Exception{
 		return selectList("QustnrQestnManage.selectQustnrManageStatistics2", map);
 	}
 

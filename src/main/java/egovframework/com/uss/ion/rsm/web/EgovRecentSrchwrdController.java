@@ -106,7 +106,7 @@ public class EgovRecentSrchwrdController {
 		searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
 		searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
 
-		List<?> reusltList = egovRecentSrchwrdService.selectRecentSrchwrdList(searchVO);
+		List<EgovMap> reusltList = egovRecentSrchwrdService.selectRecentSrchwrdList(searchVO);
 		model.addAttribute("resultList", reusltList);
 
 		model.addAttribute("searchKeyword",
@@ -328,13 +328,13 @@ public class EgovRecentSrchwrdController {
 
 		RecentSrchwrd recentSrchwrdVO = egovRecentSrchwrdService.selectRecentSrchwrdDetail(recentSrchwrd);
 
-		List<?> reusltList = null;
+		List<EgovMap> reusltList = null;
 
 		// 사용자검색여부 'Y'인 경우만 검색어 조회
 		if (recentSrchwrdVO.getSrchwrdManageUseYn().equals("Y")) {
 			reusltList = egovRecentSrchwrdService.selectRecentSrchwrdResultInquire(recentSrchwrd);
 		} else { // 2012.11 KISA 보안조치
-			reusltList = new ArrayList<Object>();
+			reusltList = new ArrayList<>();
 		}
 
 		AjaxXmlBuilder ajaxXmlBuilder = new AjaxXmlBuilder();
